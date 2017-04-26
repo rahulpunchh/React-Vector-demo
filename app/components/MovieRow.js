@@ -12,6 +12,8 @@ export default class MovieRow extends Component {
 
     return (
       <View style={styles.container}>
+        <View style={{ height: 2, backgroundColor: "blue" }} />
+
         <Image style={{ width: 100, height: 100 }} source={{ uri: url }} />
         <View style={{ flex: 1, flexDirection: "column", marginLeft: 5 }}>
           <View
@@ -31,7 +33,20 @@ export default class MovieRow extends Component {
               }}
             >
               {this.props.data.original_title}
+              <Text
+                style={{
+                  textAlign: "center",
+                  alignSelf: "center",
+                  color: "#000000",
+                  fontSize: 8,
+                  textDecorationLine: "none"
+                }}
+              >
+                ( {this.props.data.release_date})
+
+              </Text>
             </Text>
+
             <Icon
               style={{
                 textAlign: "right",
@@ -49,6 +64,7 @@ export default class MovieRow extends Component {
           <Text style={{ color: "#000000", fontSize: 8 }}>
             {this.props.data.overview}
           </Text>
+
         </View>
       </View>
     );
